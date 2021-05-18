@@ -1,6 +1,3 @@
-import random
-
-
 def partition(unsorted, leftIndex, rightIndex):
     """
     This function sorts a sub-array of integers and returns the pivot index of the sorted array.
