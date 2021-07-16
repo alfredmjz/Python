@@ -12,8 +12,6 @@ class Traffic_Light:
 
         number_of_traffic = total number of cars waiting to pass the traffic
 
-        total_rotation_completed = number of times the traffic light made a full rotation
-
         red_light_timer = the timer for red light of the traffic light
 
         green_light_timer = the timer for green light of the traffic light
@@ -25,10 +23,9 @@ class Traffic_Light:
                 raise WrongValueError
             self.direction = direction
             self.number_of_traffic = 0
-            self.total_rotation_completed = 0
             self.red_light_timer = 0
             self.green_light_timer = 0
-            self.status = None
+            self.status = 'red'
         except WrongValueError:
             print("{} is not accepted".format(direction),
             "direction can only be one of the following: ['up','left','right','down']",
@@ -45,3 +42,4 @@ class Traffic_Light:
         [inTraffic.append(Car()) for _ in range(self.number_of_traffic)]
         return inTraffic
 
+    

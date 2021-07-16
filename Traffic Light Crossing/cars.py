@@ -11,7 +11,7 @@ class Car:
         selected = state[np.random.randint(0,last_index)]
         self.state = selected
 
-    def delayOnGreen(current_state):
+    def delayOnGreen(self):
         '''
         Returns the potential delay of each Car object depending on its respective state
         Precondition:   current_state must not be null and can only be one of the 4 given states
@@ -20,11 +20,12 @@ class Car:
                         current_state == 'tired' or 'unattentive'
                         current_state == 'distracted'
         '''
+        current_state = self.state
         if current_state == 'strict':
             delay = 0
-        elif current_state == 'tired' or 'unattentive':
-            delay = np.random.randint(1,2)
-        elif current_state == 'distracted':
-            delay = np.random.randint(1,3)
+        elif current_state == 'tired':
+            delay = 1
+        elif current_state == 'unattentive' or 'distracted':
+            delay = np.random.randint(2,3)
         return delay
 
